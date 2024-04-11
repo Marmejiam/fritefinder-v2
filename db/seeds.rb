@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Bar.destroy_all
+
+20.times do
+  Bar.create(
+    name: Faker::Company.name,
+    address: Faker::Address.full_address,
+    frites_price: Faker::Commerce.price(range: 1..10.0)
+  )
+end
